@@ -42,7 +42,7 @@ class DosesController < ApplicationController
   private
   
   def find_cocktail
-    @cocktail = Cocktail.find(params[:cocktail_id]ss)
+    @cocktail = Cocktail.find(params[:cocktail_id])
   end
 
   def find_ingredient
