@@ -1,0 +1,9 @@
+<h1><%=@cocktail.name %></h1>
+<p>Find me in app/views/cocktails/show.html.erb</p>
+
+  <%= link_to "Add A Dose", new_cocktail_dose_path(@cocktail)  %>
+
+  <%= link_to "Delete A Dose", dose_path, method: :delete %>
+
+<h3>Updated last : <%= @cocktail.updated_at %></h3>
+
