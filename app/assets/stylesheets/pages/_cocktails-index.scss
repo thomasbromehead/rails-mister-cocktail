@@ -1,0 +1,69 @@
+li{
+  list-style: none;
+}
+
+h1.display-4, p {
+  color:white;
+  font-weight: bold;
+}
+
+p{
+  text-transform: capitalize;
+}
+
+.card{
+  height:300px;
+  margin-bottom: 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+}
+
+.card h2 {
+  color:white;
+  background-color: rgba(0,0,0,0.1);
+  width:fit-content;
+  padding: 0 8px;
+}
+
+.flex {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.card-description, #option {
+  margin-left: 20px;
+}
+
+#option a{
+  color: white;
+}
+
+
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}

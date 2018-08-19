@@ -1,0 +1,12 @@
+
+<div class="container-fluid text-center">
+<h1>Add a cocktail</h1>
+  <div class="row text-center">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.input :name %>
+      <%= f.button :submit %>
+    <% end %>
+    </div>
+  </div>
+</div>

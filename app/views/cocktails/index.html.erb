@@ -1,11 +1,28 @@
-<h1>Cocktails#List</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<div class="container">
 
-<% @cocktails.each do |cocktail| %>
-  <h3><%=cocktail.name%></h3>
-  <%= link_to "Show this cocktail's detail", cocktail_path(cocktail) %>
-  <%= link_to "Add A Dose", new_cocktail_dose_path(cocktail)  %>
+<div class="jumbotron"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path("lime.jpg")%>'); background-size:cover;">
+  <h1 class="display-4">Mister Cocktail!</h1>
+  <hr class="my-4">
+  <p>A simple app to generate cocktail with over 100+ ingredients.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
 
-<% end %>
-
+<hr style='border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));'>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-6">  
+        <div class="card flex" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/2000/2000?image=645'); background-size:cover; background-position:bottom;">
+          <div class="card-description">
+            <h2><%=cocktail.name%></h2>
+          </div>
+          <div id="option">
+            <%= link_to "Show this cocktail's detail", cocktail_path(cocktail), {class: 'btn btn-primary'}%>
+            <%= link_to "Add A Dose", new_cocktail_dose_path(cocktail), {class: 'btn btn-warning'} %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
 

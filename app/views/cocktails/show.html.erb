@@ -1,9 +1,20 @@
-<h1><%=@cocktail.name %></h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="container">
+<div class="row text-center">
 
-  <%= link_to "Add A Dose", new_cocktail_dose_path(@cocktail)  %>
+  <h1><%=@cocktail.name %></h1>
+  <ul class="list-group list-group-flush">
+    <% @cocktail.doses.each do |dose| %>
+      <li class="list-group-item"><%= dose.ingredient.name %></li>
+      <li class="list-group-item"><%= dose.description %></li>
+      <li class="list-group-item" style="margin-bottom:20px;"><%= link_to "Delete This Dose", dose_path(dose), method: :delete %></li>
 
-  <%= link_to "Delete A Dose", dose_path, method: :delete %>
+    <% end %>
+     
+  </ul>
+  <%= link_to "Add A Dose", new_cocktail_dose_path(@cocktail), {class: "btn btn-success"} %>
+  <%= link_to "Back to the list", root_path, {class: "btn btn-warning"} %>
+  
+  </div>
 
-<h3>Updated last : <%= @cocktail.updated_at %></h3>
+</div>
 

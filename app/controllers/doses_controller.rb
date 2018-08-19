@@ -5,23 +5,15 @@ class DosesController < ApplicationController
 
   def new
     @dose = Dose.new
-    # @ingredients = []
-    # Ingredient.all.each do |ing|
-    #   @ingredients << ing.name
-    # end
     @ingredient = Ingredient.all
   end
   
   def create
-    @ingredients = []
-    Ingredient.all.each do |ing|
-      @ingredients << ing.name
-    end
     @dose = Dose.new(dose_params)
     # Assign the dose's cocktail to be the cocktail found by the private method
     @dose.cocktail = @cocktail
     if @dose.save
-      redirect_to cocktail_path(@dose.cocktail_id)
+      redirect_to cocktail_path(@cocktail)
     else 
       p '-----'
       puts @dose.errors.full_messages
@@ -31,12 +23,12 @@ class DosesController < ApplicationController
   end
 
   def destroy
-  # Retrieve the dose to be delete
+  # Retrieve the dose to be deleted
   @dose = Dose.find(params[:id])
-  @dose.destroy
-  redirect_to root_path
+  @cocktail = @dose.cocktail_id
   # Delete this dose 
-
+  @dose.destroy
+  redirect_to cocktail_path(@cocktail)
   end
 
   private
