@@ -8,6 +8,7 @@ class DosesController < ApplicationController
     @ingredient = Ingredient.all
   end
   
+  
   def create
     @dose = Dose.new(dose_params)
     # Assign the dose's cocktail to be the cocktail found by the private method
